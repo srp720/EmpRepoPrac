@@ -1,0 +1,27 @@
+Database: Employee
+
+Department:
+DepId
+DepName
+CreatedBy
+CreatedAt
+UpdatedBy
+UpdatedAt
+
+Employee:
+EmpId
+EmpName
+EmpJoinDate
+EmpExpierience
+EmpDepartmentId
+EmpBirthDate
+EmpSalary
+EmpEmailId
+EmpMobNo
+EmpGender
+CreatedBy
+CreatedAt
+UpdatedBy
+UpdatedAt
+
+FOREIGN KEY FK_Department REFERENCES Department(DeptId)
