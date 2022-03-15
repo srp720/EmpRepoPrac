@@ -16,18 +16,18 @@ namespace EmployeeBE.Controllers
     {
         private readonly IEmployee _employee;
         private readonly IDepartment _department;
-        public EmployeeController(IEmployee employee, IDepartment department)
+        public EmployeeController(IEmployee employee/*, IDepartment department*/)
         {
             _employee = employee;
-            _department = department;
+            //_department = department;
         }
 
         // POST Employee
         [HttpPost]
         public ActionResult<Employee> AddEmployee(Employee emps)
         {
-            emps.UpdatedBy = "EmpId";
-            emps.CreatedBy = "EmpId";
+            emps.UpdatedBy = emps.UpdatedBy;
+            emps.CreatedBy = emps.CreatedBy;
             emps.CreatedAt = DateTime.Now;
             emps.UpdatedAt = DateTime.Now;
             bool created = _employee.Create(emps);
@@ -43,6 +43,17 @@ namespace EmployeeBE.Controllers
             return Ok(_employee.GetAll());
         }
 
+        // GET: api/Dept/name        
+        [HttpGet("Dept/{name}")]
+        public ActionResult GetEmpByDeptName(string name)
+        {
+            var emp = _employee.GetEmpByDeptName(name);
+            if (emp == null)
+            {
+                return NoContent();
+            }
+            return Ok(emp);
+        }
 
     }
 }

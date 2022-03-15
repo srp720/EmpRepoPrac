@@ -13,10 +13,10 @@ namespace EmployeeBE.IServices
         public IEnumerable GetEmpByEmpId(long eid);
         public IEnumerable GetEmpByBdate(DateTime bdate);
         public IEnumerable GetEmpByJoinDt(DateTime joindt);
-        public IEnumerable GetEmpByExperience(DateTime exp);
+        public IEnumerable GetEmpByExperience(decimal exp);
         public IEnumerable GetEmpBySalary(long sal);
         public IEnumerable GetEmpByGender(string gen);
-        public Department GetEmpByDeptName(string dname);
+        public List<Employee> GetEmpByDeptName(string dname);
         public IEnumerable GetEmpByDeptId(long did);
     }
 }

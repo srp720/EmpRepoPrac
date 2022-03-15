@@ -9,11 +9,11 @@ namespace EmployeeBE.Models
 {
     public partial class Employee
     {
-        public long EmpId { get; set; }
+        public int EmpId { get; set; }
         public string EmpName { get; set; }
         public DateTime EmpJoinDate { get; set; }
-        public DateTime EmpExpierience { get; set; }
-        public long EmpDepartmentId { get; set; }
+        public decimal EmpExpierience { get; set; }
+        public int EmpDepartmentId { get; set; }
         public DateTime EmpBirthDate { get; set; }
         public int EmpSalary { get; set; }
         public string EmpEmailId { get; set; }

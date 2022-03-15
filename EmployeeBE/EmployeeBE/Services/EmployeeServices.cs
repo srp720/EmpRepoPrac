@@ -104,9 +104,9 @@ namespace EmployeeBE.Services
         }
 
         // Get by Experience
-        public IEnumerable GetEmpByExperience(DateTime exp)
+        public IEnumerable GetEmpByExperience(decimal exp)
         {
-            var post = context.Employee.Where(x => x.EmpExpierience == exp.Date).ToList();
+            var post = context.Employee.Where(x => x.EmpExpierience == exp).ToList();
             return post;
         }
 
@@ -125,9 +125,9 @@ namespace EmployeeBE.Services
         }
 
         // Get by DeptName
-        public Department GetEmpByDeptName(string dname)
+        public List<Employee> GetEmpByDeptName(string dname)
         {
-            var deptname = context.Department.Include(x => x.DeptName).SingleOrDefault(x => x.DeptName == dname);
+            var deptname = context.Employee.Include(x => x.EmpDepartment).Where(x => x.EmpDepartment.DeptName == dname).ToList();
             return deptname;
         }
 

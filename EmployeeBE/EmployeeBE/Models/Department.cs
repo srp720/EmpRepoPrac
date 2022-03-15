@@ -14,7 +14,7 @@ namespace EmployeeBE.Models
             Employee = new HashSet<Employee>();
         }
 
-        public long DeptId { get; set; }
+        public int DeptId { get; set; }
         public string DeptName { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
